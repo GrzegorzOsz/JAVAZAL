@@ -2,13 +2,15 @@ package com.company;
 
 import devices.Car;
 import devices.Phone;
+import creatures.Animal;
+import creatures.FarmAnimal;
+import creatures.Pet;
 
 public class Main {
     public static void main(String[] args) {
-        Animal dog = new Animal();
-        dog.species = "canis";
-        dog.weight = 10.0;
+        Pet dog = new Pet("canis",10.0);
         dog.name = "Szarik";
+        FarmAnimal pig = new FarmAnimal("Sus domesticus",300.0);
 
         dog.takeForWalk();
         dog.takeForWalk();
@@ -22,7 +24,7 @@ public class Main {
         dog.takeForWalk();
         dog.takeForWalk();
         dog.takeForWalk();
-        dog.feed();
+        dog.feed(5.0);
 
         Car fiat = new Car("fiat","Bravo",2020,10000.0);
         fiat.YearOfProd=2020;
@@ -63,6 +65,8 @@ public class Main {
         dog.sell(me,kup,500.0);
         iphone.sell(me,kup,1250.0);
         kup.sell(me,kup,1000.0);
+        pig.beEaten();
+        dog.feed(10.0);
 
     }
 }
