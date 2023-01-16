@@ -21,6 +21,11 @@ public class Main {
         dog.takeForWalk();
         dog.feed();
 
+        Human me = new Human();
+        me.firstname = "Grzegorz";
+        me.lastName = "Oszmian";
+        me.setSalary(4000);
+        me.getSalary();
         Car fiat = new Car("fiat","Bravo",2020);
     }
 }
