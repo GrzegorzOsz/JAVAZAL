@@ -3,8 +3,7 @@ package com.company;
 public class Animal {
     public String species;
     public Double weight;
-    String name;
-    String color;
+    public String name;
     Boolean alive;
 
     public Animal(String species) {
@@ -48,7 +47,21 @@ public class Animal {
             System.out.println("waga: " + weight);
         }
     }
-
+    public void sell(Human buyer, Human seller, Double price) {
+        if (seller.pet == this) {
+            if (buyer.cash > price) {
+                buyer.pet = this;
+                seller.pet = null;
+                seller.cash += price;
+                buyer.cash -= price;
+                System.out.println(name +" "+ " Sprzedany dla"+" "+buyer);
+            } else {
+                System.out.println("Brak środków");
+            }
+        } else {
+            System.out.println("Nie ma czym handlować");
+        }
+    }
     public String toString() {
         return "Species: " + species + " Name: " + name;
     }

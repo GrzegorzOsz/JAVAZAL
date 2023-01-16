@@ -1,15 +1,21 @@
 package com.company;
 
 import devices.Car;
+import devices.Phone;
+
 
 import java.util.Date;
 
 public class Human {
-    String firstname;
-    String lastName;
-    Integer age;
+    public String firstname;
+    public String lastName;
+    public Integer age;
     private Double salary;
-    private Car car;
+    public Car car;
+    public Double cash;
+    public Animal pet;
+    public Phone phone;
+
 
 
     public Double getSalary() {
@@ -44,6 +50,9 @@ public class Human {
         } else {
             System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
+    }
+    public void sell(Human buyer, Human seller, Double price){
+        System.out.println("Handel ludźmi?");
     }
 
     public String toString() {
