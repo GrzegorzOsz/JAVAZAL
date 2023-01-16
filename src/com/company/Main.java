@@ -26,6 +26,7 @@ public class Main {
         me.lastName = "Oszmian";
         me.setSalary(4000);
         me.getSalary();
-        Car fiat = new Car("fiat","Bravo",2020);
+        Car fiat = new Car("fiat","Bravo",2020,10000.0);
+        me.setCar(fiat);
     }
 }
