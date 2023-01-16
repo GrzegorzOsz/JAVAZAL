@@ -1,7 +1,7 @@
 package com.company;
 
 public class Animal {
-    String species;
+    public String species;
     public Double weight;
     String name;
     String color;

@@ -1,18 +1,12 @@
 package devices;
 
-public class Car {
-    public final String model;
-    public final String producer;
-    public final Integer YearOfProd;
+public class Car extends device {
+    public String model;
+    public String producer;
+    public Integer YearOfProd;
     public Double value;
-
-
-    public Car(String producer, String model, int YearOfProd,Double value) {
-        this.producer = producer;
-        this.model = model;
-        this.YearOfProd = YearOfProd;
-        this.value = value;
-
+    public Car(String producer, String model, int YearOfProd, double value) {
+        super(model, producer, YearOfProd, value);
     }
     public  boolean equals (Car fiat){
         if (this == fiat){
@@ -26,8 +20,8 @@ public class Car {
         }
     }
 
-    public String toString() {
-        return "Producent: " + producer + " Model: " + model + " Rok produkcji: " + YearOfProd + " Wartość:" + value;
 
+    public void turnOn(){
+        System.out.println("Przekręcam kluczyk");
     }
 }

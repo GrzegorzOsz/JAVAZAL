@@ -1,6 +1,7 @@
 package com.company;
 
 import devices.Car;
+import devices.Phone;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,11 +31,21 @@ public class Main {
         me.setSalary(4000);
         me.getSalary();
         Car fiat = new Car("fiat","Bravo",2020,10000.0);
+        fiat.YearOfProd=2020;
+        fiat.value=10000.0;
         Car fiat2 = new Car("fiat","Bravo",2020,10000.0);
+        fiat2.YearOfProd=2020;
+        fiat2.value=10000.0;
         Car opel = new Car("opel","astra",1998,2000.00);
+        opel.YearOfProd=1998;
+        opel.value=2000.0;
+        Phone iphone=new Phone("apple","14",2022,5000);
         me.setCar(fiat);
         System.out.println(dog);
         System.out.println(fiat);
         System.out.println(me);
+        fiat.turnOn();
+        iphone.turnOn();
+
     }
 }
