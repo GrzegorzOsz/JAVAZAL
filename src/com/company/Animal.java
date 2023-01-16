@@ -16,10 +16,9 @@ public class Animal {
             this.weight = 10.0;
         } else if (species.equals("fenis")) {
             this.weight = 2.0;
-        } else{
+        } else {
             this.weight = 1.0;
         }
-
 
 
     }
@@ -48,6 +47,9 @@ public class Animal {
             System.out.println("Martwego na spacer ?");
             System.out.println("waga: " + weight);
         }
+    }
 
+    public String toString() {
+        return "Species: " + species + " Name: " + name;
     }
 }

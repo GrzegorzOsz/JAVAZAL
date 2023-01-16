@@ -1,5 +1,7 @@
 package com.company;
 
+import devices.Car;
+
 import java.util.Date;
 
 public class Human {
@@ -27,19 +29,24 @@ public class Human {
             this.salary = salary;
         }
     }
-        public Car getCar () {
-            return car;
-        }
 
-        public void setCar (Car car){
-            if (this.salary > car.value) {
-                System.out.println("Udało ci się kupić samochód ");
-                this.car = car;
-            } else if (this.salary > car.value / 12) {
-                System.out.println("udało ci się kupić samochód ale na kredyt");
-                this.car = car;
-            } else {
-                System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
-            }
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        if (this.salary > car.value) {
+            System.out.println("Udało ci się kupić samochód ");
+            this.car = car;
+        } else if (this.salary > car.value / 12) {
+            System.out.println("udało ci się kupić samochód ale na kredyt");
+            this.car = car;
+        } else {
+            System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
     }
+
+    public String toString() {
+        return "Imie: " + firstname + " Nazwisko: " + lastName + " Wiek:" + age;
+    }
+}
