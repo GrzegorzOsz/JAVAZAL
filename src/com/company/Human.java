@@ -3,8 +3,10 @@ package com.company;
 import creatures.Animal;
 import devices.Car;
 import devices.Phone;
+import devices.device;
 
-
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Human {
@@ -12,11 +14,15 @@ public class Human {
     public String lastName;
     public Integer age;
     private Double salary;
-    public Car car;
+    public Car[] garage;
     public Double cash;
     public Animal pet;
     public Phone phone;
+    private  static final Integer garageSize = 3;
 
+    Human(){
+        this.garage=new Car[garageSize];
+    }
 
 
     public Double getSalary() {
@@ -26,7 +32,7 @@ public class Human {
     }
 
 
-    void setSalary(double salary) {
+    void setSalary(Double salary) {
         if (salary < 0) {
             System.out.println("Wypłata musi być wieksza niz 0");
         } else {
@@ -37,17 +43,17 @@ public class Human {
         }
     }
 
-    public Car getCar() {
-        return car;
+    public Car getCar(Integer garageSize) {
+        return this.garage[garageSize];
     }
 
-    public void setCar(Car car) {
+    public void setCar(Car car,Integer garageSize) {
         if (this.salary > car.value) {
             System.out.println("Udało ci się kupić samochód ");
-            this.car = car;
+            this.garage[garageSize] = car;
         } else if (this.salary > car.value / 12) {
             System.out.println("udało ci się kupić samochód ale na kredyt");
-            this.car = car;
+            this.garage[garageSize] = car;
         } else {
             System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
@@ -58,5 +64,55 @@ public class Human {
 
     public String toString() {
         return "Imie: " + firstname + " Nazwisko: " + lastName + " Wiek:" + age;
+    }
+    public Double garageValue(){
+        Double value = 0.0;
+        for(int i = 0; i < garage.length; i++){
+            if(garage[i] != null){
+                value += garage[i].value;
+            }
+        }
+        System.out.println("Value: " + value);
+        return value;
+    }
+
+    public void sortGarage() {
+        Arrays.sort(garage, Comparator.nullsLast(Comparator.comparing(device::getYearOfProd)));
+        System.out.println(Arrays.toString(garage));
+    }
+
+
+
+    public boolean hasCar(Car car){
+        for(int i = 0; i < garage.length; i++){
+            if(garage[i] == car){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean freeSpot(){
+        for(int i = 0; i < garage.length; i++){
+            if(garage[i] == null){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void removeCar(Car car){
+        for(int i = 0; i < garage.length; i++){
+            if(garage[i] == car){
+                garage[i] = null;
+            }
+        }
+    }
+    public void addCar(Car car){
+        for(int i = 0; i < garage.length; i++){
+            if(garage[i] == null){
+                garage[i] = car;
+            }
+        }
     }
 }

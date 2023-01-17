@@ -49,7 +49,7 @@ public class Main {
         me.firstname = "Grzegorz";
         me.lastName = "Oszmian";
         me.age = 23;
-        me.cash=4000.0;
+        me.cash=24000.0;
 
         Human kup = new Human();
         kup.firstname="Janusz";
@@ -57,18 +57,18 @@ public class Main {
         kup.age=39;
         kup.cash=0.0;
         kup.pet=dog;
-        kup.car= opel;
         kup.phone=iphone;
 
-        me.setSalary(4000);
+        me.setSalary(8000.0);
         me.getSalary();
-        me.setCar(fiat);
+        kup.setSalary(10000.0);
+        kup.getSalary();
+        me.setCar(fiat,1);
         System.out.println(dog);
         System.out.println(fiat);
         System.out.println(me);
         fiat.turnOn();
         iphone.turnOn();
-        opel.sell(me,kup,2000.0);
         dog.sell(me,kup,500.0);
         iphone.sell(me,kup,1250.0);
         kup.sell(me,kup,1000.0);
@@ -86,6 +86,15 @@ public class Main {
         iphone.installAnApp(appNames);
         URL url1 = new URL("https","wsb.pl",7546,"Extranet");
         xiaomi.installAnApp(url1);
+        kup.setCar(fiat,0);
+        kup.setCar(tesla,1);
+        kup.setCar(opel,2);
+        kup.garageValue();
+        me.setCar(fiat2,1);
+        me.garageValue();
+        kup.sortGarage();
+        opel.sell(me,kup,10000.0);
+        me.getCar(2);
 
     }
 }

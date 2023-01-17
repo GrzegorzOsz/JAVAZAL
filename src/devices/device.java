@@ -6,9 +6,13 @@ public abstract class device {
     public Integer YearOfProd;
     public Double value;
 
-    public device(String model, String producer, Integer YearOfProd, Double value) {
-        this.model = model;
+    public Integer getYearOfProd() {
+        return YearOfProd;
+    }
+
+    public device(String producer,String model, Integer YearOfProd, Double value) {
         this.producer = producer;
+        this.model = model;
         this.YearOfProd = YearOfProd;
         this.value = value;
     }

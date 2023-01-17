@@ -22,7 +22,7 @@ public class Phone extends device {
                 seller.phone = null;
                 seller.cash += price;
                 buyer.cash -= price;
-                System.out.println(producer +" "+ model + " Sprzedany dla"+" "+buyer);
+                System.out.println(producer +" "+ model  + " Sprzedany dla"+" "+buyer);
             } else {
                 System.out.println("Brak środków");
             }
