@@ -51,9 +51,11 @@ public class Human {
         if (this.salary > car.value) {
             System.out.println("Udało ci się kupić samochód ");
             this.garage[garageSize] = car;
+            car.updateOwner(this);
         } else if (this.salary > car.value / 12) {
             System.out.println("udało ci się kupić samochód ale na kredyt");
             this.garage[garageSize] = car;
+            car.updateOwner(this);
         } else {
             System.out.println("zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }

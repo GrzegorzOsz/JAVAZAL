@@ -55,7 +55,7 @@ public class Main {
         kup.firstname="Janusz";
         kup.lastName="Biznes";
         kup.age=39;
-        kup.cash=0.0;
+        kup.cash=30000.0;
         kup.pet=dog;
         kup.phone=iphone;
 
@@ -63,7 +63,6 @@ public class Main {
         me.getSalary();
         kup.setSalary(10000.0);
         kup.getSalary();
-        me.setCar(fiat,1);
         System.out.println(dog);
         System.out.println(fiat);
         System.out.println(me);
@@ -90,11 +89,15 @@ public class Main {
         kup.setCar(tesla,1);
         kup.setCar(opel,2);
         kup.garageValue();
-        me.setCar(fiat2,1);
+        me.setCar(fiat2,0);
         me.garageValue();
         kup.sortGarage();
-        opel.sell(me,kup,10000.0);
-        me.getCar(2);
-
+        tesla.sell(me,kup,10000.0);
+        fiat2.sell(kup,me,5000.0);
+        fiat2.sell(me,kup,5000.0);
+        fiat2.lastOwner();
+        fiat2.transactionCount();
+        fiat2.wasOwner(me);
+        opel.wasOwner(kup);
     }
 }
