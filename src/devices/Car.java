@@ -3,17 +3,17 @@ package devices;
 import com.company.Human;
 
 
-public class Car extends device {
+public abstract class Car extends device {
 
     public Car(String producer, String model, int YearOfProd, double value) {
         super(producer, model, YearOfProd, value);
     }
-    public  boolean equals (Car fiat){
-        if (this == fiat){
+    public  boolean equals (Car car){
+        if (this == car){
             return true;
-        } else if (this.model.equals(fiat.model)
-                && this.producer.equals(fiat.producer)
-                && this.value.equals(fiat.value)){
+        } else if (this.model.equals(car.model)
+                && this.producer.equals(car.producer)
+                && this.value.equals(car.value)){
             return true;
         } else {
             return false;
@@ -38,4 +38,5 @@ public class Car extends device {
     public void turnOn(){
         System.out.println("Przekręcam kluczyk");
     }
+    public abstract void refuel();
 }
