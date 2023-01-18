@@ -99,5 +99,26 @@ public class Main {
         fiat2.transactionCount();
         fiat2.wasOwner(me);
         opel.wasOwner(kup);
+
+        Application YT = new Application("YouTube",0.0,11.1);
+        Application FB = new Application("Facebook",0.0,5.1);
+        Application IG = new Application("Instagram",0.0,18.6);
+        Application DL = new Application("DeepL",30.0,3.13);
+        Application MC = new Application("Minecraft",50.0,13.9);
+
+        iphone.buyAndInstall(me,YT);
+        iphone.buyAndInstall(me,FB);
+        iphone.buyAndInstall(me,IG);
+        iphone.buyAndInstall(me,DL);
+        iphone.buyAndInstall(me,MC);
+
+        iphone.checkApp(YT);
+        iphone.checkAppWithName("YouTube");
+
+        iphone.showFreeApp();
+        iphone.installedAppValue();
+        iphone.showAppAlphabetically();
+        iphone.showAppPriceAsc();
+
     }
 }
